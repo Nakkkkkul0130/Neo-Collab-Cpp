@@ -32,3 +32,4 @@ int main() {
 
     return 0;
 }
+// compile successfull but two test cases pass out of four test cases after submit code
