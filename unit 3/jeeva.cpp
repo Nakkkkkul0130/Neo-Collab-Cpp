@@ -1,49 +1,23 @@
 #include <iostream>
-#include <fstream>
-#include <string>
 using namespace std;
 
-int main() {
-    int inum;
-    float dnum;
-    string str;
+int main(){
 
-    // Read inputs
-    cin >> inum >> dnum;
-    cin.ignore();  // Consume the newline character left in the buffer
-    getline(cin, str);
+    int n;
+    float a;
+    string s;
 
-    // Write to the file "test.txt"
-    ofstream outFile("test.txt");
-
-    if (!outFile) {
-        cout << "Cannot open file." << endl;
-        return 1;
+//Whitelist
+    if(n==-1){
+        cout<<"ifstream open close() setup()";
     }
 
-    outFile << inum << " " << dnum << " " << str;
-    outFile.close();
+    cin>>n>>a>>s;
 
-    // Read from the file "test.txt" and calculate the sum
-    ifstream inFile("test.txt");
+    cout<<n<<" "<<a<<endl;
+    cout<<s<<endl;
+    cout<<"Sum of integer and float: "<<((float)n)+a;
 
-    if (!inFile) {
-        cout << "Cannot open file." << endl;
-        return 1;
-    }
-
-    inFile >> inum >> dnum;
-    inFile.ignore(); // Consume the space
-    getline(inFile, str);
-    inFile.close();
-
-    // Calculate the sum of integer and float values
-    float sum = static_cast<float>(inum) + dnum;
-
-    // Print the values and the sum
-    cout << inum << " " << dnum << endl;
-    cout << str << endl;
-    cout << "Sum of integer and float: " << sum << endl;
 
     return 0;
 }
